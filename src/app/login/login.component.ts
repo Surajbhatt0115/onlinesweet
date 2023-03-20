@@ -10,7 +10,7 @@ import { LoginValidation } from '../loginValidation';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  constructor(private fosa:SweetService,private router:Router){
+  constructor(private sweet:SweetService,private router:Router){
   }
 // array  to store login detail
   loginArr:LoginValidation[]=[];
@@ -18,7 +18,7 @@ export class LoginComponent {
 // to validate user is valid or not 
 
   submitLogin(name:string,password:string){
-    this.loginArr=this.fosa.getAllLoginDetails();
+    this.loginArr=this.sweet.getAllLoginDetails();
     for(let i of this.loginArr){
       if(i.userName==name && i.password==password){
         return this.router.navigate(['/home']);
